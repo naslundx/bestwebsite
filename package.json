@@ -4,6 +4,7 @@
   "description": "Best website in the world!",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-validator": "^6.11.1"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
