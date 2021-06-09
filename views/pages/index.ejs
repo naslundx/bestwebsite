@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>Gästbok</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<h1>Marcus Gästbok</h1>
+<div>
+    <b>Lämna ett meddelande!</b>
+    <input type="text" id="msg">
+    <button onclick="submitmessage()" id="submit">Skicka</button>
+    <p id="output"></p>
+</div>
+
+<div>
+    <h3>Meddelanden:</h3>
+    <ul>
+        <% messages.forEach(function(msg) { %>
+        <li><%= msg %></a></li>
+        <% }); %>
+    </ul>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
