@@ -4,7 +4,7 @@ const { query, validationResult } = require('express-validator');
 const app = express();
 app.set('view engine', 'ejs');
 
-let messages = []
+let messages = [];
 
 app.get('/submit', [query("data").isString().isLength({min: 3, max: 50})], (req, res) => {
     const errors = validationResult(req);
@@ -17,12 +17,12 @@ app.get('/submit', [query("data").isString().isLength({min: 3, max: 50})], (req,
     messages.push(req.query.data);
     res.writeHead(200);
     res.end("OK");
-})
+});
 
 app.get("/", (req, res) => {
     res.render("pages/index", {messages: messages.slice().reverse()});
 });
 
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.listen(process.env.PORT);
