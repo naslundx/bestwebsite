@@ -4,7 +4,7 @@ const { query, validationResult } = require('express-validator');
 const app = express();
 app.set('view engine', 'ejs');
 
-let messages = [];
+let messages = []
 
 app.get('/submit', [query("data").isString().isLength({min: 3, max: 50})], (req, res) => {
     const errors = validationResult(req);
